@@ -11,10 +11,12 @@ function FileForm() {
 
     data.append("post[title]", event.target.title.value);
     data.append("post[image]", event.target.image.files[0]);
+
+    submitToAPI(data);
   }
 
   function submitToAPI(data) {
-    fetch("https://localhost:3000/posts", {
+    fetch("http://localhost:3000/posts", {
       method: "POST",
       body: data,
     })
