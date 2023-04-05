@@ -38,3 +38,11 @@ def latest
   render json:@post
 end
 ```
+
+cors.rb -> uncommit
+gemfile 'rack-cors'
+
+```
+
+bundle install
+```
