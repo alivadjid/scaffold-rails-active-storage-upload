@@ -39,8 +39,12 @@ class PostsController < ApplicationController
   end
 
   def latest
+    # @post = Post.last.to_json(include: [:image])
+    # @post = Post.last.to_json(include: [:image_url])
     @post = Post.last
-    render json: @post
+
+    # render json: @post
+    render json: PostSerializer.new(@post).serializable_hash[:data][:attributes]
   end
 
   private

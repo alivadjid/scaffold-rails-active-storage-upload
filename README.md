@@ -46,3 +46,14 @@ gemfile 'rack-cors'
 
 bundle install
 ```
+
+update post controller
+post model
+image_url
+
+@post = Post.last.to_json(include: [:image_url]) // undefined method sezializable hash for .../redirect
+
+```
+bundle add jsonapi-serializer
+rails g serializer post id title
+```
