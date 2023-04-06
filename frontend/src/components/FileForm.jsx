@@ -21,7 +21,10 @@ function FileForm() {
       body: data,
     })
       .then((res) => res.json())
-      .then((data) => setLatestPost(data.image_url))
+      .then((data) => {
+        console.log("data", data);
+        setLatestPost(data.image_url);
+      })
       .catch((err) => console.error(err));
   }
 
